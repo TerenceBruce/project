@@ -64,8 +64,7 @@ export default {
           .signInWithEmailAndPassword(form.email, form.password)
           .then(data => {
             console.log(data);
-            // this.$router.replace({ name: "register" });
-             myRouter.push('About');
+            myRouter.push('Welcome');
           })
           .catch(
             err.value = "Account not found. Please try again."
