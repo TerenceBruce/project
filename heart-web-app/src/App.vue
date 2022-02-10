@@ -4,9 +4,17 @@
     <router-link to="/about">About</router-link>  -->
     <router-link to="/register">Register</router-link> |
     <router-link to="/login">Login</router-link> 
+    <!-- <Header></Header> -->
   </div>
   <router-view/>
 </template>
+
+<script>
+// import Header from "./components/Header"
+export default {
+  // components: { Header }
+}
+</script>
 
 <style>
 #app {

@@ -1,39 +1,55 @@
 <template>
   <div>
-    <div v-if="loggedIn">Logged in as {{ email }}<br><button class="but" @click="signOut">Sign out</button></div>
+    <div v-if="loggedIn">Logged in as <b>{{ email }}</b><br><br>
+        <el-button type="warning" @click="changePassword">Change Password</el-button>
+        <el-button type="danger" @click="signOut">Sign out</el-button>
+    </div>
     <div v-else>Not logged in.</div>
-    
   </div>
 </template>
 
 <script>
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 export default {
     mounted() {
         this.checkLogin();
     },
     methods: {
-    checkLogin() {
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                console.log(user.email);
-                this.loggedIn = true;
-                this.email = user.email;
-            } else {
-                this.loggedIn = false;
-            }
-        });
-    },
-    signOut() {
-        firebase
-            .auth()
-            .signOut()
+        checkLogin() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    // console.log(user.email);
+                    this.loggedIn = true;
+                    this.email = user.email;
+                } else {
+                    this.loggedIn = false;
+                }
+            });
+        },
+        signOut() {
+            firebase
+                .auth()
+                .signOut()
+                .then(() => {
+                    this.$router.replace({ name: "login" }
+                );
+            });
+        },
+        changePassword() {
+            console.log("hit");
+            const auth = getAuth();
+            sendPasswordResetEmail(auth, this.email)
             .then(() => {
-                this.$router.replace({ name: "login" }
-            );
-        });
-    }
+                console.log("email sent");
+            })
+            .catch((error) => {
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
+                console.log(error);
+            });
+        }
     },
     data() {
         return { loggedIn: false };
