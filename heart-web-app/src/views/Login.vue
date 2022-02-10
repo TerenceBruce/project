@@ -68,7 +68,7 @@ export default {
           })
           .catch(
             err.value = "Account not found. Please try again."
-            // auth/wrong-password and auth/user-not-found
+            // auth/wrong-password and auth/user-not-found //
           );
       }
       return { login, form, err }
