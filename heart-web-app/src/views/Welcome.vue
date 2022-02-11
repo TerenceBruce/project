@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="loggedIn">Logged in as <b>{{ email }}</b><br><br>
-        <el-button type="warning" @click="changePassword">Change Password</el-button>
+        <el-button type="warning" @click="changePassword">Reset Password</el-button>
         <el-button type="danger" @click="signOut">Sign out</el-button>
         <br><br>
         <div class="pageBody">
@@ -42,15 +42,12 @@ export default {
             });
         },
         changePassword() {
-            console.log("hit");
             const auth = getAuth();
             sendPasswordResetEmail(auth, this.email)
             .then(() => {
                 console.log("email sent");
             })
             .catch((error) => {
-                // const errorCode = error.code;
-                // const errorMessage = error.message;
                 console.log(error);
             });
         }
