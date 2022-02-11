@@ -81,8 +81,8 @@
           type="primary"
           @click="register"
           >Create Account</el-button>
-        <p style="color: red;">{{err}}</p>
-        <p style="color: green;">{{success}}</p>
+        <p style="color: #D63737;">{{err}}</p>
+        <p style="color: #6CAC73;">{{success}}</p>
     </div>
   </div>
 </template>
@@ -154,6 +154,16 @@ export default {
       border-radius: 5px;
       background-color: white;
       margin-left: 25vw;
+  }
+
+  .header {
+    padding-top: 5vh;
+  }
+
+  #subtitle {
+    font-family: Tahoma;
+    font-size: 18px;
+    color: #4C4B4B;
   }
 
   .left {

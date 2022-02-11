@@ -4,7 +4,6 @@
         ref="formRef"
         :model="form"
         >
-        <!-- <b>Login</b> -->
         <div class="container">
           <div class="header">
             <h1 id="title">Heart App</h1>
@@ -100,18 +99,19 @@ export default {
   
   .container {
       width: 50vw;
-      height: 70vh;
+      height: 60vh;
       border-radius: 5px;
       background-color: white;
       margin-left: 25vw;
   }
 
   .header {
-    height: 30vh;
+    height: 22vh;
+    padding-top: 5vh;
   }
 
   #subtitle {
-    margin-top: 20vh;
+    margin-top: 10vh;
     font-family: Tahoma;
     font-size: 18px;
     color: #4C4B4B;
