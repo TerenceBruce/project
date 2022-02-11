@@ -10,7 +10,7 @@
             :model="form"
             label-position="top"
             >
-            <el-form-item label="*Email" style="margin-top: 1vh">
+            <el-form-item label="Email *" >
               <el-input
               placeholder="Email Address"
               v-model="form.email"
@@ -18,21 +18,21 @@
               required
               />
             </el-form-item>
-            <el-form-item label="Number" style="margin-top: 1vh">
+            <el-form-item label="Number" >
               <el-input
               placeholder="Contact Number"
               v-model="form.number"
               style="width: 20vw;"
               />
             </el-form-item>
-            <el-form-item label="Address" style="margin-top: 1vh">
+            <el-form-item label="Address" >
               <el-input
               placeholder="Address"
               v-model="form.address"
               style="width: 20vw;"
               />
             </el-form-item>
-            <el-form-item label="*Password" style="margin-top: 1vh">
+            <el-form-item label="Password *" >
               <el-input
               type="password"
               show-password
@@ -46,28 +46,28 @@
             ref="formRef"
             :model="form"
             label-position="top">
-            <el-form-item label="*Name" style="margin-top: 1vh">
+            <el-form-item label="Name *" >
               <el-input
               placeholder="Full Name"
               v-model="form.name"
               style="width: 20vw;"
               />
             </el-form-item>
-            <el-form-item label="*Institution" style="margin-top: 1vh">
+            <el-form-item label="Institution *" >
               <el-input
               placeholder="E.g. MMU"
               v-model="form.institution"
               style="width: 20vw;"
               />
             </el-form-item>
-            <el-form-item label="Postcode" style="margin-top: 1vh">
+            <el-form-item label="Postcode" >
               <el-input
               placeholder="Postcode"
               v-model="form.postcode"
               style="width: 20vw;"
               />
             </el-form-item>
-            <el-form-item label="*Password" style="margin-top: 1vh">
+            <el-form-item label="Password *">
               <el-input
               type="password"
               show-password
