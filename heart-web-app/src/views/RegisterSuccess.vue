@@ -21,8 +21,17 @@
 </template>
 
 <script>
+import { useRouter } from "vue-router";
 export default {
-    props: ['email']
+    props: ['email'],
+    setup() {
+        const myRouter = useRouter();
+        const loadLogin = () => {
+            myRouter.push('Login');
+        }
+
+        return { loadLogin }
+    }
 }
 </script>
 
