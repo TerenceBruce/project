@@ -67,6 +67,10 @@ export default {
         height: 90vh;
         padding-top: 10vh;
     }
+
+    .fpHeader {
+        padding-top: 2vh;
+    }
   
   .fpContainer {
       width: 50vw;
