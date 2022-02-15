@@ -1,11 +1,15 @@
 <template>
   <div>
     <div v-if="loggedIn">Logged in as <b>{{ email }}</b><br><br>
-        <el-button type="warning" @click="changePassword">Reset Password</el-button>
+        <!-- <el-button type="warning" @click="changePassword">Reset Password</el-button>
         <el-button type="danger" @click="signOut">Sign out</el-button>
-        <br><br>
+        <br><br> -->
         <div class="pageBody">
-            ALL DATA GOES IN THIS DIV
+            <h2>ALL DATA GOES IN THIS DIV</h2>
+            <el-button class="btn"
+                type="primary"
+                @click="loadMyAccount"
+            >My Account</el-button>
         </div>
     </div>
     <div v-else>Not logged in.</div>
@@ -15,10 +19,19 @@
 <script>
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import { useRouter } from "vue-router";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 export default {
     mounted() {
         this.checkLogin();
+    },
+    setup() {
+        const myRouter = useRouter();
+        const loadMyAccount = () => {
+            myRouter.push('myaccount');
+        }
+
+        return {loadMyAccount}
     },
     methods: {
         checkLogin() {
@@ -63,7 +76,7 @@ export default {
 
     .pageBody {
         background: linear-gradient(360deg, #001E3C 0%, #002663 93.8%);
-        height: 80vh;
+        height: 100vh;
     }
 
 </style>

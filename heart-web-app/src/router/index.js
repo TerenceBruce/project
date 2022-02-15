@@ -5,6 +5,7 @@ import Login from "../views/Login.vue";
 import Welcome from "../views/Welcome.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
 import RegisterSuccess from "../views/RegisterSuccess.vue";
+import MyAccount from "../views/MyAccount.vue";
 
 const routes = [
   {
@@ -32,6 +33,12 @@ const routes = [
     path: "/welcome",
     name: "welcome",
     component: Welcome
+  },
+  {
+    path: "/myaccount",
+    name: "myaccount",
+    component: MyAccount,
+    props: true
   },
   {
     path: "/forgotPassword",
