@@ -4,6 +4,7 @@ import Register from "../views/Register.vue";
 import Login from "../views/Login.vue";
 import Welcome from "../views/Welcome.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
+import RegisterSuccess from "../views/RegisterSuccess.vue";
 
 const routes = [
   {
@@ -15,6 +16,12 @@ const routes = [
     path: "/register",
     name: "register",
     component: Register
+  },
+  {
+    path: "/registersuccess",
+    name: "registersuccess",
+    component: RegisterSuccess,
+    props: true
   },
   {
     path: "/login",

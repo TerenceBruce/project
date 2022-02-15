@@ -67,11 +67,11 @@
               style="width: 20vw;"
               />
             </el-form-item>
-            <el-form-item label="Password *">
+            <el-form-item label="Confirm Password *">
               <el-input
               type="password"
               show-password
-              placeholder="Re-enter Password"
+              placeholder="Password"
               v-model="form.password2"
               style="width: 20vw;"
               />
@@ -89,10 +89,13 @@
 
 <script>
 import { reactive, ref } from "vue";
+import { useRouter } from "vue-router";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 export default {
   setup() {
+
+      const myRouter = useRouter();
 
       const form = reactive({
       email: '',
@@ -116,8 +119,9 @@ export default {
             .auth()
             .createUserWithEmailAndPassword(form.email, form.password1)
             .then(() => {
-              success.value = "Registration Succesful. You can now login."
-              err.value = "";
+              // success.value = "Registration Succesful. You can now login."
+              // err.value = "";
+              myRouter.push({name: 'registersuccess', params: {email: form.email}});
             })
             .catch((error) => {
               console.log(error.code);
