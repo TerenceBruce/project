@@ -2,8 +2,15 @@
   <div class="wrapper">
         <div class="container">
           <div class="header">
-            <h1 id="title">Heart App</h1>
-            <p id="subtitle">Register for an account</p>
+            <div class="h_left">
+              <img id="logo" src="../assets/logo.png" width="150">
+            </div>
+            <div class="h_right">
+              <h1 id="title">Heart App</h1>
+            </div>
+            <div class="h_center">
+              <h4 id="subtitle">Register for an account</h4>
+            </div>
           </div>
           <el-form class="left"
             ref="formRef"
@@ -154,14 +161,50 @@ export default {
   }
   .container {
       width: 50vw;
-      height: 70vh;
+      height: 75vh;
       border-radius: 5px;
       background-color: white;
       margin-left: 25vw;
   }
 
+
   .header {
     padding-top: 5vh;
+    /* background-color: green; */
+    height: 20vh;
+    text-align: center;
+  }
+
+  .h_left {
+    float: left;
+    width: 15vw;
+    margin-left: 4.5vw;
+    height: 15vh;
+    /* background-color: red; */
+  }
+
+  #logo {
+    float: right;
+  }
+
+  .h_right {
+    float: right;
+    width: 30.5vw;
+    height: 13vh;
+    /* background-color: blue; */
+    padding-top: 1vh;
+  }
+
+  #title {
+    float: left;
+    font-family: Tahoma;
+    font-size: 40px;
+    color: #4C4B4B;
+  }
+
+  .h_center {
+    margin-top: 15vh;
+    height: 4vh;
   }
 
   #subtitle {

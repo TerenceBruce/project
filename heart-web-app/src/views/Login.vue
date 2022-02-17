@@ -6,37 +6,46 @@
         >
         <div class="container">
           <div class="header">
-            <h1 id="title">Heart App</h1>
-            <p id="subtitle">Please enter your username and password</p>
+            <div class="h_left">
+              <img id="logo" src="../assets/logo.png" width="150">
+            </div>
+            <div class="h_right">
+              <h1 id="title">Heart App</h1>
+            </div>
+            <div class="h_center">
+              <h4 id="subtitle">Please enter your username and password</h4>
+            </div>
           </div>
-          <el-form-item>
-            <el-input
-            placeholder="Email Address"
-            v-model="form.email"
-            style="width: 18vw; margin-left: 16vw ;"
-            />
-          </el-form-item>
-          <el-form-item>
-          <el-input
-          type="password"
-          show-password
-          placeholder="Password"
-          v-model="form.password"
-          style="width: 18vw; margin-left: 16vw;"
-          />
-          </el-form-item>
-          <el-button
-            type="primary"
-            style="width: 18vw; height: 4vh; font-size: 18px"
-            @click="login"
-            >Sign in
-          </el-button><br>
-          <el-button type="text"
-            style="margin-top: 1vh"
-            @click="forgotPassword"
-            ><u>Forgotten Password?</u>
-          </el-button><br>
-          <p id="error">{{err}}</p>
+          <div class="inputs">
+            <el-form-item>
+              <el-input
+                placeholder="Email Address"
+                v-model="form.email"
+                style="width: 18vw; margin-left: 16vw ;"
+                />
+            </el-form-item>
+            <el-form-item>
+              <el-input
+                type="password"
+                show-password
+                placeholder="Password"
+                v-model="form.password"
+                style="width: 18vw; margin-left: 16vw;"
+              />
+            </el-form-item>
+            <el-button
+              type="primary"
+              style="width: 18vw; height: 4vh; font-size: 18px"
+              @click="login"
+              >Sign in
+            </el-button><br>
+            <el-button type="text"
+              style="margin-top: 1vh"
+              @click="forgotPassword"
+              ><u>Forgotten Password?</u>
+            </el-button><br>
+            <p id="error">{{err}}</p>
+            </div>
         </div>
     </el-form>
   </div>
@@ -106,15 +115,52 @@ export default {
   }
 
   .header {
-    height: 22vh;
     padding-top: 5vh;
+    /* background-color: green; */
+    height: 20vh;
+    text-align: center;
+  }
+
+  .h_left {
+    float: left;
+    width: 15vw;
+    margin-left: 4.5vw;
+    height: 15vh;
+    /* background-color: red; */
+  }
+
+  #logo {
+    float: right;
+  }
+
+  .h_right {
+    float: right;
+    width: 30.5vw;
+    height: 13vh;
+    /* background-color: blue; */
+    padding-top: 1vh;
+  }
+
+  #title {
+    float: left;
+    font-family: Tahoma;
+    font-size: 40px;
+    color: #4C4B4B;
+  }
+
+  .h_center {
+    margin-top: 16vh;
+    height: 4vh;
   }
 
   #subtitle {
-    margin-top: 10vh;
     font-family: Tahoma;
     font-size: 18px;
     color: #4C4B4B;
+  }
+
+  .inputs {
+    margin-top: 3vh;
   }
 
   #error {
