@@ -24,7 +24,7 @@
                         </div>
                         
 						<div style="border-right: solid rgb(211, 211, 211) 1px">
-                            
+                            <a href="https://www.news-medical.net/news/20220124/Gene-replacement-therapy-could-help-mend-a-broken-heart-study-suggests.aspx"><img src="../assets/gene.png"></a>
                             <h3>Gene replacement therapy</h3>
                             <p>According to researchers from Japan</p>
                         </div>
