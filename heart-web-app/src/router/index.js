@@ -6,6 +6,7 @@ import Welcome from "../views/Welcome.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
 import RegisterSuccess from "../views/RegisterSuccess.vue";
 import MyAccount from "../views/MyAccount.vue";
+import Upload from "../views/Upload.vue";
 
 const routes = [
   {
@@ -44,6 +45,11 @@ const routes = [
     path: "/forgotPassword",
     name: "forgotPassword",
     component: ForgotPassword
+  },
+  {
+    path: "/upload",
+    name: "upload",
+    component: Upload
   }
 ]
 
