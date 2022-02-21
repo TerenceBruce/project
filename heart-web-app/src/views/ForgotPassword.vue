@@ -1,10 +1,17 @@
 <template>
   <div class="fpWrapper">
         <div class="fpContainer">
-            <div class="fpHeader">
-                <h1>Heart App</h1>
-                <p id="subtitle">Please enter your email address</p>
+            <div class="header">
+            <div class="h_left">
+              <img id="logo" src="../assets/logo.png" width="150">
             </div>
+            <div class="h_right">
+              <h1 id="title">Heart App</h1>
+            </div>
+            <div class="h_center">
+              <h4 id="subtitle">Please enter your username and password</h4>
+            </div>
+          </div>
             <el-input
                 placeholder="Email Address"
                 style="width: 18vw; margin-top: 4vh;"
@@ -67,17 +74,49 @@ export default {
         height: 90vh;
         padding-top: 10vh;
     }
-
-    .fpHeader {
-        padding-top: 2vh;
-    }
   
   .fpContainer {
       width: 50vw;
-      height: 40vh;
+      height: 50vh;
       border-radius: 5px;
       background-color: white;
       margin-left: 25vw;
+  }
+
+  .header {
+    padding-top: 5vh;
+    height: 20vh;
+    text-align: center;
+  }
+
+  .h_left {
+    float: left;
+    width: 15vw;
+    margin-left: 4.5vw;
+    height: 15vh;
+  }
+
+  #logo {
+    float: right;
+  }
+
+  .h_right {
+    float: right;
+    width: 30.5vw;
+    height: 13vh;
+    padding-top: 1vh;
+  }
+
+  #title {
+    float: left;
+    font-family: Tahoma;
+    font-size: 40px;
+    color: #4C4B4B;
+  }
+
+  .h_center {
+    margin-top: 16vh;
+    height: 4vh;
   }
 
   #subtitle {
@@ -85,6 +124,12 @@ export default {
     font-size: 18px;
     color: #4C4B4B;
   }
+
+  /* #subtitle {
+    font-family: Tahoma;
+    font-size: 18px;
+    color: #4C4B4B;
+  } */
 
   #result {
       font-family: Tahoma;
