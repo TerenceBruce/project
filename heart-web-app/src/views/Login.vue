@@ -112,6 +112,7 @@ export default {
       border-radius: 5px;
       background-color: white;
       margin-left: 25vw;
+      margin-top: 3vw;
   }
 
   .header {
@@ -126,6 +127,7 @@ export default {
     width: 15vw;
     margin-left: 4.5vw;
     height: 15vh;
+    margin-top: 1vw;
     /* background-color: red; */
   }
 

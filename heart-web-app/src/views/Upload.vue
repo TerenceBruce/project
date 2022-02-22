@@ -1,8 +1,19 @@
 <template>
 <div class="wrapper">
+  <div class="h_left">
+    <img id="logo" src="../assets/logo.png" width="130"> 
+    <h1 class="logo"> HeartApp </h1>
+    <p class="login"> logged in as <br> USER</p>
+  </div>
+  <div class="sidenav">
+      <router-link to="/upload"><el-button>Upload Data </el-button></router-link><br><br>
+      <router-link to="/upload"><el-button>View Data </el-button></router-link><br><br>
+      <router-link to="/upload"><el-button>My Account</el-button></router-link><br><br>
+      <router-link to="/upload"> <el-button>Log out </el-button></router-link>
+  </div>
     <div class="container">
-    <div class="h_left"><img id="logo" src="../assets/logo.png" width="130"> </div>
-    <div class="import">
+    <div class="import"><br>
+    <h1> Upload File </h1>
     <vue-csv-import
         v-model="csv"
         :fields="{
@@ -26,8 +37,6 @@
             Myectomy: {required: true, label: 'Myectomy'}
             }"
     >
-      
-      <vue-csv-toggle-headers style="margin-top: 1vw;"></vue-csv-toggle-headers>
       <vue-csv-errors></vue-csv-errors>
       <p><vue-csv-input style="width: 18vw; height: 4vh; font-size: 15px"></vue-csv-input></p>
       <vue-csv-map></vue-csv-map>
@@ -41,45 +50,82 @@
 </template>
 
 <script>
-
-import {VueCsvToggleHeaders, VueCsvSubmit, VueCsvMap, VueCsvInput, VueCsvErrors, VueCsvImport} from 'vue-csv-import';
+import {
+  VueCsvSubmit,
+  VueCsvMap,
+  VueCsvInput,
+  VueCsvErrors,
+  VueCsvImport,
+} from "vue-csv-import";
 
 export default {
-    name: 'Upload',
-    components: { VueCsvToggleHeaders, VueCsvSubmit, VueCsvMap, VueCsvInput, VueCsvErrors, VueCsvImport },
-    data() { return { csv: null,};
+  name: "Upload",
+  components: {
+    VueCsvSubmit,
+    VueCsvMap,
+    VueCsvInput,
+    VueCsvErrors,
+    VueCsvImport,
+  },
+  data() {
+    return { csv: null };
   },
 };
 </script>
 
 <style>
+.sidenav {
+  float: left;
+  position: absolute;
+  margin-top: 10vw;
+  color: white;
+  font-size: 20px;
+  padding: 30px;
+  text-decoration: none;
+}
 
-  .import {
-    margin: 10vw;
-  }
-  
-  .h_left {
-    float: left;
-    position: absolute;
-    width: 15vw;
-    margin-top: 0.5vw;
-    height: 15vh;
-    /* background-color: red; */
-  }
+.login {
+  float: right;
+  position: absolute;
+  margin-top: -6vw;
+  margin-left: 90vw;
+  white-space: nowrap;
+  color: white;
+}
 
-  .wrapper {
-    background: linear-gradient(360deg, #001E3C 0%, #002663 93.8%);
-    height: 200vh;
-    padding-top: 10vh;
-  }
+.logo {
+  float: left;
+  position: absolute;
+  margin-top: -6vw;
+  margin-left: 12vw;
+  color: white;
+}
 
-    .container {
-      width: 50vw;
-      height: 78vh;
-      border-radius: 5px;
-      background-color: white;
-      margin-left: 25vw;
-  }
+.import {
+  margin: 10vw;
+}
 
+.h_left {
+  float: left;
+  position: absolute;
+  width: 15vw;
+  margin-top: -5vw;
+  margin-left: -2vw;
+  height: 15vh;
+  /* background-color: red; */
+}
 
+.wrapper {
+  background: linear-gradient(360deg, #001e3c 0%, #002663 93.8%);
+  height: 200vh;
+  padding-top: 10vh;
+}
+
+.container {
+  height: 82vh;
+  border-radius: 5px;
+  background-color: white;
+  margin-left: 14vw;
+  margin-top: -8vw;
+}
 </style>

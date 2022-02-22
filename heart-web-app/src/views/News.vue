@@ -68,6 +68,7 @@ export default {
       border-radius: 5px;
       background-color: white;
       margin-left: 25vw;
+      margin-top: 3vw;
   }
     img {
         width: 30%;
