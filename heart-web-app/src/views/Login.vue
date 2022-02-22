@@ -37,6 +37,7 @@
               type="primary"
               style="width: 18vw; height: 4vh; font-size: 18px"
               @click="login"
+              :disabled='isDisabled'
               >Sign in
             </el-button><br>
             <el-button type="text"
@@ -57,12 +58,6 @@ import firebase from 'firebase/compat/app';
 import { useRouter } from "vue-router";
 import 'firebase/compat/auth';
 export default {
-  data() {
-    return {
-      email: "",
-      password: "",
-    };
-  },
   setup() {
 
       const myRouter = useRouter();
@@ -72,8 +67,10 @@ export default {
       password: ''
     })
     
+    let unsuccessful = 0;
 
     let err = ref("");
+    let isDisabled = ref(false);
 
     const login = () => {
         firebase
@@ -83,17 +80,24 @@ export default {
           console.log(data);
           myRouter.push('Welcome');
         })
-        .catch(
-          err.value = "Account not found. Please try again."
-          // auth/wrong-password and auth/user-not-found //
-        );
+        .catch((error) => {
+          err.value = "Account not found. Please try again.";
+          console.log(error.code);
+          if (error.code === "auth/wrong-password") {
+            unsuccessful++
+            if (unsuccessful > 4) {
+              isDisabled.value = true;
+              err.value = "Too many failed attemps. Please reset your password to login";
+            }
+          }
+        });
     }
 
     const forgotPassword = () => {
         myRouter.push('forgotPassword');
       }
 
-      return { login, form, err, forgotPassword }
+      return { login, form, err, forgotPassword, isDisabled }
   }
 };
 </script>
