@@ -99,6 +99,7 @@ import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import { getAuth, sendEmailVerification } from "firebase/auth";
 export default {
   setup() {
 
@@ -128,7 +129,12 @@ export default {
             .then(() => {
               // success.value = "Registration Succesful. You can now login."
               // err.value = "";
-              myRouter.push({name: 'registersuccess', params: {email: form.email}});
+              const auth = getAuth();
+              sendEmailVerification(auth.currentUser)
+                .then(() => {
+                  console.log("email sent");
+                  myRouter.push({name: 'registersuccess', params: {email: form.email}});
+                });
             })
             .catch((error) => {
               console.log(error.code);
