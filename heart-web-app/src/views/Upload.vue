@@ -1,6 +1,8 @@
 <template>
 <div class="wrapper">
     <div class="container">
+    <div class="h_left"><img id="logo" src="../assets/logo.png" width="130"> </div>
+    <div class="import">
     <vue-csv-import
         v-model="csv"
         :fields="{
@@ -24,12 +26,14 @@
             Myectomy: {required: true, label: 'Myectomy'}
             }"
     >
-        <vue-csv-toggle-headers></vue-csv-toggle-headers>
-        <vue-csv-errors></vue-csv-errors>
-        <p><vue-csv-input></vue-csv-input></p>
-        <vue-csv-map></vue-csv-map>
-        <vue-csv-submit></vue-csv-submit>
-    </vue-csv-import>
+      
+      <vue-csv-toggle-headers style="margin-top: 1vw;"></vue-csv-toggle-headers>
+      <vue-csv-errors></vue-csv-errors>
+      <p><vue-csv-input style="width: 18vw; height: 4vh; font-size: 15px"></vue-csv-input></p>
+      <vue-csv-map></vue-csv-map>
+      <vue-csv-submit style="width: 18vw; height: 4vh; font-size: 18px; margin-top: 1vw;"></vue-csv-submit> 
+  </vue-csv-import>
+  </div>
     <p> Results </p>
     {{ csv }}
     </div>
@@ -49,6 +53,20 @@ export default {
 </script>
 
 <style>
+
+  .import {
+    margin: 10vw;
+  }
+  
+  .h_left {
+    float: left;
+    position: absolute;
+    width: 15vw;
+    margin-top: 0.5vw;
+    height: 15vh;
+    /* background-color: red; */
+  }
+
   .wrapper {
     background: linear-gradient(360deg, #001E3C 0%, #002663 93.8%);
     height: 200vh;
@@ -57,9 +75,11 @@ export default {
 
     .container {
       width: 50vw;
-      height: 68vh;
+      height: 78vh;
       border-radius: 5px;
       background-color: white;
       margin-left: 25vw;
   }
+
+
 </style>
