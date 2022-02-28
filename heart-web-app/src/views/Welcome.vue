@@ -5,7 +5,9 @@
         <el-button type="danger" @click="signOut">Sign out</el-button>
         <br><br> -->
         <div class="pageBody">
-            <h2>ALL DATA GOES IN THIS DIV</h2>
+            <h1>Welcome to the heart app.</h1>
+            <h4>Use the sidemenu to navigate through the site.</h4>
+            <h4>Access the help page for information about how to use the site.</h4>
             <el-button class="btn"
                 type="primary"
                 @click="loadMyAccount"
@@ -77,6 +79,8 @@ export default {
     .pageBody {
         background: linear-gradient(360deg, #001E3C 0%, #002663 93.8%);
         height: 100vh;
+        padding-top: 4vh;
+        color: white;
     }
 
 </style>

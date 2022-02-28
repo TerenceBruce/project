@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .sidenav {
   float: left;
   position: absolute;

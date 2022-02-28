@@ -42,7 +42,22 @@
                         </div>
 						
 						<center><h4>Latest News</h4></center>
-
+                        <el-button
+                            type="primary"
+                            style="width: 18vw; height: 4vh; font-size: 18px"
+                            @click="getNews"
+                            >Update News Feed
+                        </el-button>
+                        <div v-for="(item, n) in newsList" :key="n">
+                            <el-card>
+                                <template #header>
+                                    <div class="card-header">
+                                    <span><strong>{{ item.title }}</strong></span>
+                                    </div>
+                                </template>
+                                <a v-bind:href="item.url">View news</a>
+                            </el-card>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -50,21 +65,39 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { reactive } from '@vue/reactivity';
 export default {
-    };
+    
+    setup() {
+        let newsList = reactive([]);
+        let article = reactive({});
+        const getNews = () => {
+            console.log("hit");
+            return axios.get('https://newsapi.org/v2/everything?q=cardiomyopathy&from=2022-01-28&sortBy=publishedAt&apiKey=06bba38cc9ae4b8490c80615e7990d58').then(response => {
+                console.log(response.data.articles);
+                for (let i = 0; i < response.data.articles.length; i++) {
+                    article.value = response.data.articles[i];
+                    newsList.push(article.value);
+                }
+            });
+        }
+        return {getNews, newsList}
+    }
+};
 </script>
 
 <style scoped>
 
   .wrapper {
     background: linear-gradient(360deg, #001E3C 0%, #002663 93.8%);
-    height: 400vh;
+    height: auto;
     padding-top: 10vh;
   }
   
   .container {
       width: 50vw;
-      height: 220vh;
+      height: auto;
       border-radius: 5px;
       background-color: white;
       margin-left: 25vw;
