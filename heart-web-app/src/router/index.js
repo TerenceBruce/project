@@ -8,6 +8,7 @@ import RegisterSuccess from "../views/RegisterSuccess.vue";
 import MyAccount from "../views/MyAccount.vue";
 import Upload from "../views/Upload.vue";
 import News from "../views/News.vue";
+import Help from "../views/Help.vue";
 
 const routes = [
   {
@@ -56,6 +57,11 @@ const routes = [
     path: "/upload",
     name: "upload",
     component: Upload
+  },
+  {
+    path: "/help",
+    name: "help",
+    component: Help
   }
 ]
 
