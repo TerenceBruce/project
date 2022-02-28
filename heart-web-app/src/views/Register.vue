@@ -127,8 +127,6 @@ export default {
             .auth()
             .createUserWithEmailAndPassword(form.email, form.password1)
             .then(() => {
-              // success.value = "Registration Succesful. You can now login."
-              // err.value = "";
               const auth = getAuth();
               sendEmailVerification(auth.currentUser)
                 .then(() => {

@@ -95,7 +95,7 @@ export default {
 
     const forgotPassword = () => {
         myRouter.push('forgotPassword');
-      }
+    }
 
       return { login, form, err, forgotPassword, isDisabled }
   }
