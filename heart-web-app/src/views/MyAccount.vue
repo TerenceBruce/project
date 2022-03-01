@@ -68,6 +68,7 @@
 import { reactive, ref } from "vue";
 import 'firebase/compat/auth';
 import { getAuth, sendPasswordResetEmail, onAuthStateChanged  } from "firebase/auth";
+// import {firebaseFireStore} from "@/firebase/database";
 export default {
     mounted() {
         this.checkLogin()
@@ -84,7 +85,7 @@ export default {
                 if (user) {
                     loggedIn.value = true;
                     email.value = user.email
-                    populatePage();
+                    // populatePage();
                 } else {
                     loggedIn.value = false;
                 }

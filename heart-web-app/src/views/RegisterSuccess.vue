@@ -1,17 +1,28 @@
 <template>
   <div class="wrapper">
     <div class="container">
-        <div class="header">
+        <!-- <div class="header">
             <h1 id="title">Heart App</h1>
             <p id="subtitle">Registration Successful</p>
-        </div>
+        </div> -->
+        <div class="header">
+            <div class="h_left">
+              <img id="logo" src="../assets/logo.png" width="150">
+            </div>
+            <div class="h_right">
+              <h1 id="title">Heart App</h1>
+            </div>
+            <div class="h_center">
+              <p id="subtitle">Registration Successful</p>
+            </div>
+          </div>
         <div>
             <p id="content">Account has been created for user:</p>
             <p id="email"><b>{{email}}</b></p>
             <br>
             <el-button
                 type="primary"
-                style="width: 16vw; font-size: 18px"
+                style="width: 16vw; font-size: 18px; margin-top: 2vh"
                 @click="loadLogin"
                 >Take me to login
             </el-button><br>
