@@ -157,23 +157,12 @@ export default {
         name: name.value,
       };
 
-<<<<<<< Updated upstream
-            firebase
-            .auth()
-            .createUserWithEmailAndPassword(form.email, form.password1)
-            .then(() => {
-              // success.value = "Registration Succesful. You can now login."
-              // err.value = "";
-              const auth = getAuth();
-              sendEmailVerification(auth.currentUser)
-=======
       if (!errorRegistration.value) {
         firebaseAuthentication
           .createUserWithEmailAndPassword(info.email, info.password)
           .then(
             (userCredentials) => {
               return userCredentials.user.updateProfile({ name: info.name })
->>>>>>> Stashed changes
                 .then(() => {
                   firebaseFireStore.collection('users').doc(userCredentials.user.uid).set({
                       email: info.email,
