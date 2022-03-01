@@ -9,7 +9,7 @@
               <h1 id="title">Heart App</h1>
             </div>
             <div class="h_center">
-              <h4 id="subtitle">Please enter your username and password</h4>
+              <h4 id="subtitle">Please enter your email/username</h4>
             </div>
           </div>
             <el-input
@@ -118,7 +118,7 @@ export default {
   }
 
   .h_center {
-    margin-top: 16vh;
+    margin-top: 19vh;
     height: 4vh;
   }
 
