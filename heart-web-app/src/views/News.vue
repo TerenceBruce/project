@@ -74,7 +74,8 @@ export default {
         let article = reactive({});
         const getNews = () => {
             console.log("hit");
-            return axios.get('https://newsapi.org/v2/everything?q=cardiomyopathy&from=2022-01-28&sortBy=publishedAt&apiKey=06bba38cc9ae4b8490c80615e7990d58').then(response => {
+            // return axios.get('https://newsapi.org/v2/everything?q=cardiomyopathy&from=2022-01-28&sortBy=publishedAt&apiKey=06bba38cc9ae4b8490c80615e7990d58').then(response => {
+            return axios.get('https://newsapi.org/v2/everything?q=cardiomyopathy&sortBy=publishedAt&apiKey=06bba38cc9ae4b8490c80615e7990d58').then(response => {
                 console.log(response.data.articles);
                 for (let i = 0; i < response.data.articles.length; i++) {
                     article.value = response.data.articles[i];

@@ -11,8 +11,12 @@
         <br><br>
         <div class="pageBody">
             <h1>Welcome to the heart app.</h1>
-            <h4>Use the sidemenu to navigate through the site.</h4>
             <h4>Access the help page for information about how to use the site.</h4>
+            <el-button class="btn"
+                type="primary"
+                @click="loadNews"
+                >News Page
+            </el-button>
         </div>
     </div>
     <div v-else>You are not logged in.</div>
@@ -34,7 +38,11 @@ export default {
             myRouter.push('myaccount');
         }
 
-        return {loadMyAccount}
+        const loadNews = () => {
+            myRouter.push('news');
+        }
+
+        return {loadMyAccount, loadNews}
     },
     methods: {
         checkLogin() {
@@ -60,17 +68,17 @@ export default {
         changePassword() {
             const auth = getAuth();
             sendPasswordResetEmail(auth, this.email)
-            .then(() => {
-                console.log("email sent");
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+                .then(() => {
+                    console.log("email sent");
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+            }
+        },
+        data() {
+            return { loggedIn: false };
         }
-    },
-    data() {
-        return { loggedIn: false };
-    }
 };
 
 </script>
