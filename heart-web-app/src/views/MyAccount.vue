@@ -1,5 +1,7 @@
 <template>
-  <div>My Account</div>
+  <div v-if="loggedIn"><br>
+  <div class="headerBar">My Account</div>
+  <div class="sidemenuBar"></div>
   <div class="container">
     <el-form
         class="left"
@@ -58,6 +60,8 @@
     >Update Details</el-button>
     <p>{{result}}</p>
   </div>
+  </div>
+  <div v-else>You are not logged in.</div>
 </template>
 
 <script>
@@ -71,13 +75,18 @@ export default {
     setup() {
 
         let email = ref("");
+        let loggedIn = ref(false);
 
         const checkLogin = () => {
+            console.log("hit");
             const auth = getAuth();
             onAuthStateChanged(auth, (user) => {
                 if (user) {
+                    loggedIn.value = true;
                     email.value = user.email
                     populatePage();
+                } else {
+                    loggedIn.value = false;
                 }
             });
         }
@@ -105,7 +114,7 @@ export default {
                 if (user) {
                     sendPasswordResetEmail(auth, user.email)
                     .then(() => {
-                        console.log("email sent");
+                        // console.log("email sent");
                         result.value = "Email Sent";
                     })
                     .catch((error) => {
@@ -124,7 +133,7 @@ export default {
             }
         }
 
-        return { resetPassword, updateDetails, result, form, populatePage, checkLogin, email}
+        return { resetPassword, updateDetails, result, form, populatePage, checkLogin, email, loggedIn}
 
     }
 }
@@ -136,7 +145,8 @@ export default {
     width: 50vw;
     height: 70vh;
     background-color: white;
-    margin-left: 10vw;
+    margin-left: 14vw;
+    margin-top: -95vh;
   }
 
   .left {
@@ -149,5 +159,21 @@ export default {
     width: 22vw;
     float: right;
   }
+
+  .headerBar {
+      width: 100%;
+      height: 20vh;
+      background: linear-gradient(360deg, #001E3C 0%, #002663 93.8%);
+      color: white;
+      line-height: 20vh;
+      font-size: 46px;
+  }
+
+  .sidemenuBar {
+      background: linear-gradient(360deg, #001E3C 0%, #002663 93.8%);
+      width: 14vw;
+      height: 100vh;
+  }
+  
 
 </style>

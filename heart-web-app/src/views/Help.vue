@@ -2,7 +2,7 @@
   <div class="wrapper">
       <div class="container">
           <div class="header">
-              <h4 id="subtitle">Help</h4>
+              <h4 id="subtitle">Help Page</h4>
             </div>
             <div class="body" style="text-align: left; padding-left: 1vw">
                 <p>

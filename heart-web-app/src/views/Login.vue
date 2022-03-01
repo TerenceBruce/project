@@ -155,7 +155,7 @@ export default {
   }
 
   .h_center {
-    margin-top: 16vh;
+    margin-top: 18vh;
     height: 4vh;
   }
 

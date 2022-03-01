@@ -165,7 +165,7 @@ export default {
   }
   .container {
       width: 50vw;
-      height: 75vh;
+      height: 80vh;
       border-radius: 5px;
       background-color: white;
       margin-left: 25vw;
@@ -209,7 +209,7 @@ export default {
   }
 
   .h_center {
-    margin-top: 15vh;
+    margin-top: 18vh;
     height: 4vh;
   }
 
@@ -223,11 +223,13 @@ export default {
     width: 20vw;
     float: left;
     padding-left: 2vw;
+    margin-top: 4vh;
   }
 
   .right {
     width: 22vw;
     float: right;
+    margin-top: 4vh;
   }
 
   .btn {
