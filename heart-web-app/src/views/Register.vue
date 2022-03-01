@@ -46,7 +46,7 @@
         <el-form-item label="Password *">
           <el-input
             type="text"
-            placeholder="password1"
+            placeholder="password"
             required
             show-password
             autocomplete="off"
@@ -69,9 +69,9 @@
         <el-form-item label="Institution">
           <el-input
             type="text"
-            placeholder="on"
+            placeholder="MMU"
             required
-            autocomplete="off"
+            autocomplete="on"
             style="width: 20vw;"
             v-model="institution"
           ></el-input>
