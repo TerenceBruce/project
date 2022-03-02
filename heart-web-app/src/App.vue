@@ -5,6 +5,7 @@
     <router-link to="/register">Register</router-link> |
     <router-link to="/login">Login</router-link>  |
     <router-link to="/help">Help</router-link> 
+     <router-link to="/news">News</router-link> 
     <!-- <Header></Header> -->
   </div>
   <router-view/>
